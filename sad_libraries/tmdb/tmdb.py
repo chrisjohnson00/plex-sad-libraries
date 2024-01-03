@@ -24,7 +24,7 @@ def search_movie_by_query_and_year(*, query: str, year: int):
     cached = sad_redis.get_from_cache(key=url)
     if cached:
         logger.debug(f"TMDB Cache hit for {query} ({year})")
-        return json.loads(cached)
+        return cached
     logger.debug(f"TMDB Cache miss for {query} ({year}), requesting from TMDB")
     r = requests.get(url, headers=headers)
     response_json = json.loads(r.text)
