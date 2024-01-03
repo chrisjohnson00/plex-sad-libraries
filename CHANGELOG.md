@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.3](https://github.com/chrisjohnson00/plex-sad-libraries/tree/v0.1.3) (2024-01-03)
+
+[Full Changelog](https://github.com/chrisjohnson00/plex-sad-libraries/compare/v0.1.2...v0.1.3)
+
+**Fixed bugs:**
+
+- fix: get from cache behavior on empty results, do not cache non-200 responses [\#4](https://github.com/chrisjohnson00/plex-sad-libraries/pull/4) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.1.2](https://github.com/chrisjohnson00/plex-sad-libraries/tree/v0.1.2) (2024-01-03)
 
 [Full Changelog](https://github.com/chrisjohnson00/plex-sad-libraries/compare/v0.1.1...v0.1.2)
