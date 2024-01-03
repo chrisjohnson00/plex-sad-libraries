@@ -1,5 +1,5 @@
 import os
-from redis.redis import get_from_cache, save_to_cache
+from sad_libraries.redis.redis import get_from_cache, save_to_cache
 import logging
 import json
 import requests
