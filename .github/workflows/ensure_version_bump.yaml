@@ -1,0 +1,40 @@
+name: Ensure Version Bump
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+jobs:
+  ensure_version_bump:
+    runs-on: ubuntu-22.04
+    name: Ensure Version Bump
+    permissions:
+      contents: read
+    steps:
+      - name: checkout
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608  # v4.1.0 Sep 22, 2023
+      - name: Get calculated next version based on commit history
+        id: nextVersion
+        uses: mathieudutour/github-tag-action@fcfbdceb3093f6d85a3b194740f8c6cec632f4e2  # v6.1 Oct 26, 2022
+        with:
+          github_token: '${{ secrets.GITHUB_TOKEN }}'
+          release_branches: main
+          default_bump: patch
+          dry_run: 'true'
+      - name: enforce version bump
+        run: |
+          # Remove the leading "v"
+          EXPECTED_VERSION=${EXPECTED_VERSION#v}
+         
+          VERSION=$(awk -F ' *= *' '/version/ {gsub(/[",]/, "", $2); print $2}' pyproject.toml)
+          
+          if [ "$VERSION" != "$EXPECTED_VERSION" ]; then
+            echo "::error::pyproject.toml specifies $VERSION but the next release version will be $EXPECTED_VERSION, please correct"
+            exit 1
+          fi
+        env:
+          EXPECTED_VERSION: ${{ steps.nextVersion.outputs.new_tag }}

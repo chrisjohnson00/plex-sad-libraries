@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sad_libraries"
+version = "0.1.0"
+authors = [
+    { name = "Chris Johnson", email = "chrisjohnson00@hotmail.com" },
+]
+description = "Shared libraries/services/modules used by my Plex SAD (Search and Destroy) apps"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "License :: MIT",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    'redis > 5',
+    'requests > 2',
+]
