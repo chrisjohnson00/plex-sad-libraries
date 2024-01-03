@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.2](https://github.com/chrisjohnson00/plex-sad-libraries/tree/v0.1.2) (2024-01-03)
+
+[Full Changelog](https://github.com/chrisjohnson00/plex-sad-libraries/compare/v0.1.1...v0.1.2)
+
+**Fixed bugs:**
+
+- fix: get cache was incorrectly loading as json [\#3](https://github.com/chrisjohnson00/plex-sad-libraries/pull/3) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.1.1](https://github.com/chrisjohnson00/plex-sad-libraries/tree/v0.1.1) (2024-01-03)
 
 [Full Changelog](https://github.com/chrisjohnson00/plex-sad-libraries/compare/v0.1.0...v0.1.1)
