@@ -17,7 +17,7 @@ def get_from_cache(*, key):
     r = get_redis_connection()
     value = r.get(key)
     logger.debug(f"Fetched '{key}':'{value}' from cache")
-    return json.loads(value)
+    return value
 
 
 def get_redis_connection():
