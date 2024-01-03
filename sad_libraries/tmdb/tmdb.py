@@ -27,6 +27,7 @@ def search_movie_by_query_and_year(*, query: str, year: int):
         return cached
     logger.debug(f"TMDB Cache miss for {query} ({year}), requesting from TMDB")
     r = requests.get(url, headers=headers)
+    r.raise_for_status()  # Raises an exception if not a 200 response code
     response_json = json.loads(r.text)
     logger.debug(f"Response url: '{url}' json: {response_json}")
     sad_redis.save_to_cache(key=url, data=response_json, ttl=28800)
@@ -45,7 +46,9 @@ def get_config():
         return cached
     logger.debug("TMDB Cache miss for /configuration, requesting from TMDB")
     r = requests.get(url, headers=headers)
+    r.raise_for_status()  # Raises an exception if not a 200 response code
     response_json = json.loads(r.text)
+    logger.debug(f"Response code: {r.status_code}")
     logger.debug(f"Response json: {response_json}")
     sad_redis.save_to_cache(key=url, data=response_json, ttl=604800)
     return response_json
