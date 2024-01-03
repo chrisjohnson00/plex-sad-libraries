@@ -1,6 +1,6 @@
 import json
 import os
-from sad_libraries import redis
+import redis
 import logging
 
 logger = logging.getLogger("sad.services.redis")
