@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.0](https://github.com/chrisjohnson00/plex-sad-libraries/tree/v0.2.0) (2024-01-29)
+
+[Full Changelog](https://github.com/chrisjohnson00/plex-sad-libraries/compare/v0.1.3...v0.2.0)
+
+**Implemented enhancements:**
+
+- feat: adding search for tv [\#7](https://github.com/chrisjohnson00/plex-sad-libraries/pull/7) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.1.3](https://github.com/chrisjohnson00/plex-sad-libraries/tree/v0.1.3) (2024-01-03)
 
 [Full Changelog](https://github.com/chrisjohnson00/plex-sad-libraries/compare/v0.1.2...v0.1.3)
